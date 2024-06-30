@@ -1,0 +1,22 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = {'Category': ['A', 'B', 'C', 'D'], 'Value1': [10, 25, 18, 32], 'Value2': [5, 12, 14, 8]}
+df = pd.DataFrame(data)
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 6))  # Adjust figsize for better visualization
+
+ax1.bar(df['Category'], df['Value1'], color='skyblue', label='Value 1')
+ax1.set_xlabel('Category')
+ax1.set_ylabel('Value 1')
+ax1.set_title('Value 1 by Category (Bar Chart)')
+ax1.legend()
+ax2.plot(df['Category'], df['Value2'], marker='o', linestyle='-', color='coral', label='Value 2')
+ax2.set_xlabel('Category')
+ax2.set_ylabel('Value 2')
+ax2.set_title('Value 2 by Category (Line Chart)')
+ax2.legend()
+
+plt.tight_layout()
+
+plt.show()
